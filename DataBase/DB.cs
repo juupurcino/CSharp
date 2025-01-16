@@ -132,7 +132,7 @@ public class DB<T>
     }
 
     private static DB<T> temp = null;
-    private static DB<T> Temp{
+    public static DB<T> Temp{
 
         get{
             if (temp == null)
@@ -143,7 +143,7 @@ public class DB<T>
     }
 
     private static DB<T> app = null;
-    private static DB<T> App{
+    public static DB<T> App{
 
         get{
             if (app == null)
@@ -154,7 +154,7 @@ public class DB<T>
     }
 
     private static DB<T> custom = null;
-    private static DB<T> Custom{
+    public static DB<T> Custom{
 
         get{
             if (custom == null)

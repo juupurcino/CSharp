@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Model;
+namespace Model.Repository;
 
 public class AlunoFakeRepository : IRepository<Aluno>
 {
@@ -9,16 +9,19 @@ public class AlunoFakeRepository : IRepository<Aluno>
     public AlunoFakeRepository()
     {
         alunos.Add(new (){
+            RA = 1233,
             Nome = "Adrian",
             Idade = 18
         });
 
         alunos.Add(new (){
-            Nome = "Jubileu",
-            Idade = 24
+            RA = 5466,
+            Nome = "Juliana",
+            Idade = 21 
         });
     }
     public List<Aluno> All => alunos;
 
     public void Add(Aluno obj) => this.alunos.Add(obj);
+
 }
