@@ -25,4 +25,14 @@ public class Professor : DataBaseObject
         {
             return professor.FirstOrDefault(a => a.ID == id);
         }
+
+    protected override void LoadFromSqlRow(DataRow data)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    protected override string SaveToSql()
+    {
+        throw new System.NotImplementedException();
+    }
 }

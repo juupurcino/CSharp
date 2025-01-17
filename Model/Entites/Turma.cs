@@ -18,9 +18,19 @@ public class Turma : DataBaseObject
 
     }
 
+    protected override void LoadFromSqlRow(System.Data.DataRow data)
+    {
+        throw new NotImplementedException();
+    }
+
     protected override string[] SaveTo() => new string[] 
     {
         this.Nome, String.Join(",", this.RAalunos), String.Join(",", this.IDdisciplinas)
         
     };
+
+    protected override string SaveToSql()
+    {
+        throw new NotImplementedException();
+    }
 }

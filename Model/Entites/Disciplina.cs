@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using DataBase;
 namespace Model;
@@ -28,4 +29,14 @@ public class Disciplina : DataBaseObject
         {
             return disciplinas.FirstOrDefault(a => a.ID == id);
         }
+
+    protected override void LoadFromSqlRow(DataRow data)
+    {
+        throw new NotImplementedException();
+    }
+
+    protected override string SaveToSql()
+    {
+        throw new NotImplementedException();
+    }
 }

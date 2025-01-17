@@ -10,9 +10,9 @@ namespace DataBase;
 public class DB<T>
     where T : DataBaseObject, new()
 {
-    private string basePath;
+    protected string basePath;
 
-    private DB(string basePath) => this.basePath = basePath;
+    protected DB(string basePath) => this.basePath = basePath;
 
     public string DBPath {
         get{
@@ -22,7 +22,7 @@ public class DB<T>
         }
     }
 
-    private List<string> openFile(){
+    protected List<string> openFile(){
 
         List<string> lines = new();
         StreamReader reader = null;
@@ -49,7 +49,7 @@ public class DB<T>
         return lines;
     }
 
-    private bool saveFile(List<string> lines){
+    protected bool saveFile(List<string> lines){
 
         StreamWriter writer= null;
         bool succes = true;
@@ -131,7 +131,7 @@ public class DB<T>
 
     }
 
-    private static DB<T> temp = null;
+    protected static DB<T> temp = null;
     public static DB<T> Temp{
 
         get{
@@ -142,7 +142,7 @@ public class DB<T>
         }
     }
 
-    private static DB<T> app = null;
+    protected static DB<T> app = null;
     public static DB<T> App{
 
         get{
@@ -153,7 +153,7 @@ public class DB<T>
         }
     }
 
-    private static DB<T> custom = null;
+    protected static DB<T> custom = null;
     public static DB<T> Custom{
 
         get{

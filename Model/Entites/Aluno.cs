@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using DataBase;
 
@@ -10,6 +11,7 @@ public class Aluno : DataBaseObject
     public int RA { get; set; }
     public string Nome { get; set; }
     public int Idade { get; set; }
+
     protected override void LoadFrom(string[] data)
     {
         this.RA = int.Parse(data[0]);
@@ -28,4 +30,16 @@ public class Aluno : DataBaseObject
         {
             return alunos.FirstOrDefault(a => a.RA == ra);
         }
+
+    protected override void LoadFromSqlRow(DataRow data)
+    {
+        this.RA = (int)data[0];
+        this.Nome= data[1].ToString();
+        this.Idade = (int)data[2];
+        
+    }
+
+    protected override string SaveToSql() 
+    => $"INSERT INTO [Aluno] VALUES ({this.RA}, '{this.Nome}', {this.Idade})";
+
 }
