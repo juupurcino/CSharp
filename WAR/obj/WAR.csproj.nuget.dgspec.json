@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\disrct\\Desktop\\CSharp\\DataBase\\DataBase.csproj": {}
+    "C:\\Users\\disrct\\Desktop\\CSharp\\WAR\\WAR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\disrct\\Desktop\\CSharp\\DataBase\\DataBase.csproj": {
+    "C:\\Users\\disrct\\Desktop\\CSharp\\WAR\\WAR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\CSharp\\DataBase\\DataBase.csproj",
-        "projectName": "DataBase",
-        "projectPath": "C:\\Users\\disrct\\Desktop\\CSharp\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\CSharp\\WAR\\WAR.csproj",
+        "projectName": "WAR",
+        "projectPath": "C:\\Users\\disrct\\Desktop\\CSharp\\WAR\\WAR.csproj",
         "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\disrct\\Desktop\\CSharp\\DataBase\\obj\\",
+        "outputPath": "C:\\Users\\disrct\\Desktop\\CSharp\\WAR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,16 +43,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.Data.SqlClient": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.9.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
