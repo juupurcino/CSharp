@@ -29,6 +29,7 @@ for (int i = 0; i < batalhas; i++)
         ataqueList.Clear();
         defesaList.Clear();
         jogadasList.Clear();
+
         jogadas = 0;
 
         // while (jogadas < 3)
@@ -38,16 +39,23 @@ for (int i = 0; i < batalhas; i++)
         //     jogadas++;
         // }
 
-        for (int j = 0; j < (ataque <= 4 ? ataque -1 : 3); j++)
+        for (int j = 0; j < (ataque <= 4 ? ataque - 1 : 3); j++)
             ataqueList.Add(Dado());
 
-        for (int j = 0; j < (defesa <= 4 ? defesa -1 : 3); j++)
+        for (int j = 0; j < (defesa < 3 ? defesa : 3); j++)
             defesaList.Add(Dado());
+
+
+        foreach (var item in defesaList)
+        {
+            Console.WriteLine(item);
+        }
+
 
         var ataqueOrder = ataqueList.OrderByDescending(x => x).ToList();
         var defesaOrder = defesaList.OrderByDescending(x => x).ToList();
 
-        for (int j = 0; j < ataqueOrder.Count(); j++)
+        for (int j = 0; j < (ataqueOrder.Count < defesaOrder.Count ? ataqueOrder.Count -1 : defesaOrder.Count - 1 ); j++)
         {
             int venceu = defesaOrder[j] >= ataqueOrder[j] ? 0 : 1;
             jogadasList.Add(venceu);
@@ -65,6 +73,7 @@ for (int i = 0; i < batalhas; i++)
         Console.WriteLine($"Ataque: {ataque}");
         Console.WriteLine($"Defesa: {defesa}");
 
+        jogadas++;
         // Console.WriteLine(ataque);
         // Console.WriteLine(defesa);
     }
@@ -77,4 +86,4 @@ for (int i = 0; i < batalhas; i++)
     Console.WriteLine(vitorias);
 }
 
-Console.WriteLine($"Vitorias: {(vitorias * 100) / (float)batalhas}");
+Console.WriteLine($"Vitorias: {vitorias * 100 / (float)batalhas}");
